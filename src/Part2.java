@@ -13,15 +13,15 @@ public class Part2 {
         
         try {
         	Scanner ABscanner = new Scanner(aliceBook);
-        	start = System.nanoTime();
+        	start = System.currentTimeMillis();
         	if (args[0].compareToIgnoreCase("hash") == 0) {
         		HashSet<String> words = new HashSet<String>();
-        		start = System.nanoTime();
+        		start = System.currentTimeMillis();
         		while (ABscanner.hasNext()) {
         			words.add(ABscanner.next());        		
         		}
-        		end = System.nanoTime();
-        		System.out.println("The total time elapsed to insert data was " + (end - start) + "ns.");
+        		end = System.currentTimeMillis();
+        		System.out.println("The total time elapsed to imsert data was " + (end - start) + "ms.");
         		count = 0;
         		for (String w : words){
         			if(w.compareToIgnoreCase("Alice") == 0){
@@ -30,26 +30,26 @@ public class Part2 {
 						}
 					}
 				}
-        		end = System.nanoTime();
-        		System.out.println("The total time elapsed to search for the word 'Alice' was " + (end - start) + "ns.");
+        		end = System.currentTimeMillis();
+        		System.out.println("The total time elapsed to search for the word 'Alice' was " + (end - start) + "ms.");
         	} else if (args[0].compareToIgnoreCase("tree") == 0) {
         		TreeSet<String> words = new TreeSet<String>();
-        		start = System.nanoTime();
+        		start = System.currentTimeMillis();
         		while (ABscanner.hasNext()) {
         			words.add(ABscanner.next());        		
         		}
-        		end = System.nanoTime();
-        		System.out.println("The total time elapsed to insert data was " + (end - start) + "ns.");
+        		end = System.currentTimeMillis();
+        		System.out.println("The total time elapsed to imsert data was " + (end - start) + "ms.");
         		count = 0;
-        		while (count < 100) {
-        			for (String word : words) {
-        				if (word == "Alice") {
-        					count += 1;
-        				}
-        			}
-        		}
-        		end = System.nanoTime();
-        		System.out.println("The total time elapsed to search for the word 'Alice' was " + (end - start) + "ns.");
+        		for (String w : words){
+        			if(w.compareToIgnoreCase("Alice") == 0){
+        				if (count != 100){
+        					count++;
+						}
+					}
+				}
+        		end = System.currentTimeMillis();
+        		System.out.println("The total time elapsed to search for the word 'Alice' was " + (end - start) + "ms.");
         	}
         	ABscanner.close();
         } catch (FileNotFoundException fnfe) {
