@@ -23,13 +23,13 @@ public class Part2 {
         		end = System.nanoTime();
         		System.out.println("The total time elapsed to insert data was " + (end - start) + "ns.");
         		count = 0;
-        		while (count < 100) {
-        			for (String word : words) {
-        				if (word == "Alice") {
-        					count += 1;
-        				}
-        			}
-        		}
+        		for (String w : words){
+        			if(w.compareToIgnoreCase("Alice") == 0){
+        				if (count != 100){
+        					count++;
+						}
+					}
+				}
         		end = System.nanoTime();
         		System.out.println("The total time elapsed to search for the word 'Alice' was " + (end - start) + "ns.");
         	} else if (args[0].compareToIgnoreCase("tree") == 0) {
