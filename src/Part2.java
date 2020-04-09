@@ -1,3 +1,11 @@
+/**
+ * Project Collections (Part 2)
+ * @author Mark Garcia 018019103
+ *         mark.garcia01@student.csulb.edu
+ * @author Brandon Wiitanen 018502846
+ *         brandon.wiitanen01@student.csulb.edu
+ */
+
 import java.util.HashSet;
 import java.util.TreeSet;
 import java.util.Scanner;
@@ -5,6 +13,18 @@ import java.io.File;
 import java.io.FileNotFoundException;
 
 public class Part2 {
+    /**
+     * This method takes in 1 argument through the command line to determine whether it will run as a TreeSet or a HashSet
+     * Reads the "AliceInWonderland.txt file and puts all the individual words into a HashSet or a TreeSet.
+     * It then tests how long it takes to insert the data as well as the amount of time it takes to find the word
+     * "Alice" 100 times. It records this data as milliseconds.
+     * @param args = either "tree" or "hash". Anything else will not run the program.
+     * ANALYSIS OF RUNTIME: Using a HashSet is more efficient than using a TreeSet in this scenario.
+     * Time for 1st operation using HashSet (milliseconds): 110
+     * Time for 2nd operation using HashSet (milliseconds): 114
+     * Time for 1st operation using TreeSet (milliseconds): 117 (+7)
+     * Time for 2nd operation using TreeSet (milliseconds): 122 (+6)
+     */
 
     public static void main(String[] args) {
         File aliceBook = new File("AliceInWonderland.txt");
